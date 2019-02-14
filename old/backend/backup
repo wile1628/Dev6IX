@@ -1,0 +1,408 @@
+<template>
+  <Slideout menu="#menu" panel="#panel" :toggleSelectors="['.toggle-button']" @on-open="open"
+            style="position: absolute;
+         top: 54px;
+         width: 248px;
+         height: 94.6%;">
+    <nav id="menu">
+      <v-navigation-drawer
+       class=""
+        color="#f4f4f4"
+       permanent
+        id="nnd"
+      >
+    <v-divider></v-divider>
+        <img src="../assets/logo.png" />
+    <v-list style="position: absolute; top: 49px">
+      <v-list-tile
+        v-for="item in items"
+        :key="item.title"
+      >
+        <v-list-tile-action style="justify-content: left; align-items: normal" >
+          <v-btn flat style="position: fixed; left:4%; width:92%; right: 2%;" v-on:click="mode = item.title"><v-icon style="position: absolute; left: 2%">{{ item.icon }}</v-icon><btn-name style="position: absolute; left: 26%; text-transform: initial; font-size: 18px">{{ item.title }}</btn-name></v-btn>
+        </v-list-tile-action>
+      </v-list-tile>
+    </v-list>
+        <div class="nest">
+        <v-list style="position: absolute; top: 185px">
+
+          <v-list-group
+            prepend-icon="domain"
+          >
+            <v-list-tile slot="activator" >
+              <v-list-tile-title style="font-size: 18px">Infrastructure</v-list-tile-title>
+            </v-list-tile>
+
+            <v-list-group
+              no-action
+              sub-group
+            >
+              <v-list-tile slot="activator">
+                <v-list-tile-title style="font-size: 17px">CWS</v-list-tile-title>
+              </v-list-tile>
+
+              <v-list-tile
+                v-for="(dc, i) in dcs"
+                :key="i"
+                @click="open"
+              >
+                <v-list-tile-title  v-on:click="see = dc[0]"  v-text="dc[0]" style="font-size:11px;"></v-list-tile-title>
+                <v-list-tile-action>
+                  <v-icon></v-icon>
+                </v-list-tile-action>
+              </v-list-tile>
+            </v-list-group>
+
+            <v-list-group
+              no-action
+              sub-group
+            >
+              <v-list-tile slot="activator">
+                <v-list-tile-title style="font-size: 17px">Edge</v-list-tile-title>
+              </v-list-tile>
+
+              <v-list-tile
+                v-for="(edc, i) in edcs"
+                :key="i"
+                @click="open"
+              >
+                <v-list-tile-title v-text="edc[0]" style="font-size:11px;"></v-list-tile-title>
+                <v-list-tile-action>
+                  <v-icon v-text="edc[1]"></v-icon>
+                </v-list-tile-action>
+              </v-list-tile>
+            </v-list-group>
+            <v-list-group
+              no-action
+              sub-group
+            >
+              <v-list-tile slot="activator">
+                <v-list-tile-title style="font-size: 17px">Brew</v-list-tile-title>
+              </v-list-tile>
+
+              <v-list-tile
+                v-for="(bdc, i) in bdcs"
+                :key="i"
+                @click="open"
+              >
+                <v-list-tile-title v-text="bdc[0]" style="font-size:11px;"></v-list-tile-title>
+                <v-list-tile-action>
+                  <v-icon v-text="bdc[1]"></v-icon>
+                </v-list-tile-action>
+              </v-list-tile>
+            </v-list-group>
+          </v-list-group>
+          <v-list-group
+            prepend-icon="account_circle"
+            value="true"
+          >
+            <v-list-tile slot="activator" >
+              <v-list-tile-title style="font-size: 18px">Users manage</v-list-tile-title>
+            </v-list-tile>
+
+            <v-list-group
+              no-action
+              sub-group
+              value="true"
+            >
+              <v-list-tile slot="activator">
+                <v-list-tile-title>Admin</v-list-tile-title>
+              </v-list-tile>
+
+              <v-list-tile
+                v-for="(admin, i) in admins"
+                :key="i"
+                @click="open"
+              >
+                <v-list-tile-title v-text="admin[0]"></v-list-tile-title>
+                <v-list-tile-action>
+                  <v-icon v-text="admin[1]"></v-icon>
+                </v-list-tile-action>
+              </v-list-tile>
+            </v-list-group>
+
+            <v-list-group
+              sub-group
+              no-action
+            >
+              <v-list-tile slot="activator">
+                <v-list-tile-title>Actions</v-list-tile-title>
+              </v-list-tile>
+
+              <v-list-tile
+                v-for="(crud, i) in cruds"
+                :key="i"
+                @click="open"
+              >
+                <v-list-tile-title v-on:click="ebash = crud[0]" v-text="crud[0]"></v-list-tile-title>
+                <v-list-tile-action>
+                  <v-icon v-text="crud[1]"></v-icon>
+                </v-list-tile-action>
+              </v-list-tile>
+            </v-list-group>
+          </v-list-group>
+        </v-list>
+        </div>
+        <!--<video controls autoplay>
+          <source src="../assets/dvizh.mp4" type="video/mp4" v-if="ebash">
+          Your browser does not support the video tag.
+        </video>
+           <hydra>
+            <img src="../assets/unit_7_2.gif" style="position: absolute; top: 76%; left: 18%;"/>
+          </hydra> -->
+        <!-- <Info style="position: absolute; left:5%; right: 5%; bottom: 7%; font-family: SimSun; text-align: center; color:#f2f2f2">Project:Hydra_Synergy, inventory tool, device66, 2018</Info>-->
+  </v-navigation-drawer>
+    </nav>
+      <main id="panel">
+        <header>
+          <div>
+            <expand-btn class="toggle-button"><v-btn icon  style="margin-left: 14%"><v-icon>menu</v-icon></v-btn>
+              <v-btn icon v-if="mode !== 'Dashboard'"><v-icon>dashboard</v-icon></v-btn>
+              <v-btn icon  color="black" v-show="mode === 'Dashboard'"><v-icon color="#00cb00" dark >dashboard</v-icon></v-btn>
+              <v-btn icon v-if="mode !== 'Chart'"><v-icon>graphic_eq</v-icon></v-btn>
+              <v-btn icon  color="black" v-show="mode === 'Chart'"><v-icon color="#00cb00" dark>graphic_eq</v-icon></v-btn>
+              <v-btn icon v-if="mode !== 'Table'"><v-icon>tab</v-icon></v-btn>
+              <v-btn icon  color="black" v-show="mode === 'Table'"><v-icon color="#00cb00" dark>tab</v-icon></v-btn>
+              <v-btn icon v-show="see === false || see === 'none'"><v-icon>domain</v-icon></v-btn>
+              <v-btn v-show="see !== false && see !=='none'" icon style="font-family: 'Copperplate Gothic Bold'">{{see}}</v-btn>
+              <v-btn icon><v-icon>account_circle</v-icon></v-btn></expand-btn>
+           <!--  <v-btn icon v-on:click="info = !info" style="position: absolute; bottom: 6%; left: -4%">
+            <v-icon medium light>info_outline</v-icon>
+            </v-btn> -->
+            <!--<v-divider style=" position: absolute; top: 80%;"></v-divider>
+            <v-icon style=" position: absolute; top: 80%; left: 11%;" large v-show="mode === 'Table'">tab</v-icon>
+            <v-icon style=" position: absolute; top: 80%; left: 11%;" large v-show="mode === 'Chart'">graphic_eq</v-icon> -->
+            <Clock :blink="true" style=" position: absolute; top: 90%; left: 11%; font-family: 'Courier New'; color: black"></Clock>
+            <div style="position: absolute; top: 92%; left: 15%; font-family: 'Courier New';">{{ new Date().getDate() }} {{ new Date().getMonth() }} {{ new Date().getFullYear() }}</div>
+          </div>
+        </header>
+      </main>
+    <esc style="position: absolute; background: #ededed;   left: 324px; top: 3.5%;  bottom: 89%; right: -465%; font-family: 'Roboto', serif; font-size: 17px" v-if="see && mode && mode !== 'Dashboard'">
+      <v-icon style="position: absolute;left: 1%; top: 22%">my_location</v-icon>
+      <v-text style="position: absolute;left: 4%; top: 26%">
+        <b>Currently you are in <u>{{see}}</u>, mode: {{mode}}</b>
+      </v-text>
+    <v-btn icon style="right: -95%" v-on:click="seen"><v-icon dark>close</v-icon></v-btn>
+     <!-- <v-btn icon style="right: -68%" v-show="mode === 'Table'" v-on:click="see= false"><v-icon dark>close</v-icon></v-btn> -->
+    </esc>
+    <esc2 style="position: absolute; background: #ededed;   left: 324px; top: 3.5%;  bottom: 89%; right: -490%; font-family: 'Roboto', serif; font-size: 18px" v-if="mode === 'Dashboard'">
+      <v-icon style="position: absolute;left: 1%; top: 22%">my_location</v-icon>
+      <v-text style="position: absolute;left: 4%; top: 26%">
+        <b>Currently you are in mode: {{mode}}</b>
+      </v-text>
+      <v-btn icon style="right: -95%" v-on:click="seen"><v-icon dark>close</v-icon></v-btn>
+      <!-- <v-btn icon style="right: -68%" v-show="mode === 'Table'" v-on:click="see= false"><v-icon dark>close</v-icon></v-btn> -->
+    </esc2>
+      <lrkDT style="position: absolute; left: 324px; right: -465%; top: 10%; bottom: 10%; overflow-y: auto" v-if="see==='LRK1' && mode==='Table'"></lrkDT>
+    <miaDT style="position: absolute; left: 324px; right: -465%; top: 10%; bottom: 10%; overflow-y: auto" v-if="see==='MIA2' && mode==='Table'"></miaDT>
+    <miaDash style="position: absolute; left: 324px; right: -465%; top: 10%; height: 464px; background: #f5f5f5" v-if="see==='MIA2' && mode==='Chart'"></miaDash>
+    <lrkDash style="position: absolute; left: 324px; right: -465%; top: 10%; height: 464px; background: #f5f5f5" v-if="see==='LRK1' && mode==='Chart'"></lrkDash>
+    <Dash style="position: absolute; left: 324px; right: -490%; top: 10%; bottom: 5%; background: #f5f5f5" v-if="mode==='Dashboard'"></Dash>
+  </Slideout>
+</template>
+
+<script>
+import miaDT from '@/components/miaDT'
+import miaDash from '@/components/miaDash'
+import Dash from '@/components/Dash'
+import lrkDash from '@/components/lrkDash'
+import lrkDT from '@/components/lrkDT'
+import tb from '@/components/tb'
+import VTextField from 'vuetify/es5/components/VTextField/VTextField'
+import VBtn from 'vuetify/es5/components/VBtn/VBtn'
+import VIcon from 'vuetify/es5/components/VIcon/VIcon'
+import VCard from 'vuetify/es5/components/VCard/VCard'
+import VListTile from 'vuetify/es5/components/VList/VListTile'
+import VInput from 'vuetify/es5/components/VInput/VInput'
+import VContainer from 'vuetify/es5/components/VGrid/VContainer'
+import VLayout from 'vuetify/es5/components/VGrid/VLayout'
+import VFlex from 'vuetify/es5/components/VGrid/VFlex'
+import VForm from 'vuetify/es5/components/VForm/VForm'
+import VNavigationDrawer from 'vuetify/es5/components/VNavigationDrawer'
+import VList from 'vuetify/es5/components/VList/VList'
+import VListGroup from 'vuetify/es5/components/VList/VListGroup'
+import VListTileAction from 'vuetify/es5/components/VList/VListTileAction'
+import VListTileAvatar from 'vuetify/es5/components/VList/VListTileAvatar'
+import VDivider from 'vuetify/es5/components/VDivider/VDivider'
+import VTab from 'vuetify/es5/components/VTabs/VTab'
+import Slideout from 'vue-slideout'
+import Clock from 'vue-digital-clock'
+import Vuetify from 'vuetify/es5/components/Vuetify/'
+
+export default {
+  name: 'Nnd',
+  components: {
+    miaDT,
+    Dash,
+    miaDash,
+    tb,
+    Vuetify,
+    lrkDT,
+    lrkDash,
+    Clock,
+    VTab,
+    VBtn,
+    VDivider,
+    VForm,
+    VContainer,
+    VLayout,
+    VFlex,
+    VInput,
+    VTextField,
+    VList,
+    VNavigationDrawer,
+    VListGroup,
+    VListTileAction,
+    VListTileAvatar,
+    VListTile,
+    VCard,
+    VIcon,
+    Slideout
+  },
+  props: {
+    mode: {
+      type: String
+    },
+    see: {
+      type: String
+    }
+  },
+  data () {
+    return {
+      ebash: false,
+      // see: false,
+      // mode: false,
+      items: [
+        {title: 'Dashboard', icon: 'dashboard'},
+        {title: 'Chart', icon: 'graphic_eq'},
+        {title: 'Table', icon: 'tab'}
+        // {title: 'Infrastructure', icon: 'domain'}
+      ],
+      admins: [
+        ['Management', 'people_outline'],
+        ['Settings', 'settings']
+      ],
+      dcs: [
+        ['AKL1'],
+        ['CHC1'],
+        ['CHI2'],
+        ['COP2'],
+        ['DAL1'],
+        ['FRA2'],
+        ['HKG3'],
+        ['JOH2'],
+        ['LON4'],
+        ['LON5'],
+        ['LRK1'],
+        ['MIA2'],
+        ['MPOD'],
+        ['MUM1'],
+        ['PAR2'],
+        ['SAO2'],
+        ['SCS2'],
+        ['SIN4'],
+        ['SJL1'],
+        ['SYD3'],
+        ['TOK2'],
+        ['TOR1'],
+        ['WDC1']
+      ],
+      edcs: [
+        ['CDG1'],
+        ['CPH1'],
+        ['DUB1'],
+        ['DXB1'],
+        ['MEL1'],
+        ['MIL1'],
+        ['MUM1'],
+        ['OTP1'],
+        ['PRG1']
+      ],
+      bdcs: [
+        ['vCenter 1'],
+        ['vCenter 2']
+      ],
+      cruds: [
+        ['Create', 'add'],
+        ['Read', 'insert_drive_file'],
+        ['Update', 'update'],
+        ['Delete', 'delete'],
+        ['Deploy', 'tap_and_play']
+      ]
+    }
+  },
+  methods: {
+    open: function () {
+      this.ebash = !this.ebash
+      // alert(this.mode)
+      console.log('slideoutOpen')
+    },
+    seen: function () {
+      this.mode = false
+      this.see = false
+    }
+  },
+  computed: {
+    s () {
+      return this.mode
+    }
+  }
+}
+
+</script>
+
+<style scoped>
+  img {
+    position: absolute;
+    left: 70px;
+    top:6px;
+
+  }
+  #panel {
+  }
+  .slideout-menu {
+    position: absolute;
+    top: 0px;
+    width: 256px;
+    height: 100%;
+    z-index: 0;
+    display: none;
+  }
+
+  .slideout-menu-left {
+    left: 0;
+    border-right-width: 2px;
+  }
+
+  .slideout-menu-right {
+    right: 0;
+  }
+
+  .slideout-panel {
+    background-color: #f4f4f4;
+    position: absolute;
+    height: 100%;
+    width:20%;
+    z-index: 1;
+    min-height: 1vh;
+    will-change: transform;
+    -webkit-box-shadow: 10px 10px 20px -2px #00FF00;
+    box-shadow: 10px 10px 20px -2px #00FF00;
+  }
+
+  .slideout-open,
+  .slideout-open body,
+  .slideout-open .slideout-panel {
+    overflow: hidden;
+    position: absolute;
+  }
+
+  .slideout-open .slideout-menu {
+    display: block;
+
+  }
+  .slideout-open .slideout-panel-left{
+    transform: translateX(248px);
+    -webkit-transform: translateX(248px);
+  }
+</style>

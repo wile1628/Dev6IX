@@ -1,0 +1,1763 @@
+<v-list-group
+            prepend-icon="domain"
+          >
+            <v-list-tile slot="activator" >
+              <v-list-tile-title style="font-size: 18px">Infrastructure</v-list-tile-title>
+            </v-list-tile>
+
+            <v-list-group
+              no-action
+              sub-group
+            >
+              <v-list-tile slot="activator">
+                <v-list-tile-title style="font-size: 17px">CWS</v-list-tile-title>
+              </v-list-tile>
+
+              <v-list-tile
+                v-for="(dc, i) in dcs"
+                :key="i"
+                @click="open"
+              >
+                <v-list-tile-title  v-on:click="see = dc[0]"  v-text="dc[0]" style="font-size:11px;"></v-list-tile-title>
+                <v-list-tile-action>
+                  <v-icon></v-icon>
+                </v-list-tile-action>
+              </v-list-tile>
+            </v-list-group>
+
+            <v-list-group
+              no-action
+              sub-group
+            >
+              <v-list-tile slot="activator">
+                <v-list-tile-title style="font-size: 17px">Edge</v-list-tile-title>
+              </v-list-tile>
+
+              <v-list-tile
+                v-for="(edc, i) in edcs"
+                :key="i"
+                @click="open"
+              >
+                <v-list-tile-title v-text="edc[0]" style="font-size:11px;"></v-list-tile-title>
+                <v-list-tile-action>
+                  <v-icon v-text="edc[1]"></v-icon>
+                </v-list-tile-action>
+              </v-list-tile>
+            </v-list-group>
+            <v-list-group
+              no-action
+              sub-group
+            >
+              <v-list-tile slot="activator">
+                <v-list-tile-title style="font-size: 17px">Brew</v-list-tile-title>
+              </v-list-tile>
+
+              <v-list-tile
+                v-for="(bdc, i) in bdcs"
+                :key="i"
+                @click="open"
+              >
+                <v-list-tile-title v-text="bdc[0]" style="font-size:11px;"></v-list-tile-title>
+                <v-list-tile-action>
+                  <v-icon v-text="bdc[1]"></v-icon>
+                </v-list-tile-action>
+              </v-list-tile>
+            </v-list-group>
+          </v-list-group>
+
+          dcs: [
+                  ['AKL1'],
+                  ['CHC1'],
+                  ['CHI2'],
+                  ['COP2'],
+                  ['DAL1'],
+                  ['FRA2'],
+                  ['HKG3'],
+                  ['JOH2'],
+                  ['LON4'],
+                  ['LON5'],
+                  ['LRK1'],
+                  ['MIA2'],
+                  ['MPOD'],
+                  ['MUM1'],
+                  ['PAR2'],
+                  ['SAO2'],
+                  ['SCS2'],
+                  ['SIN4'],
+                  ['SJL1'],
+                  ['SYD3'],
+                  ['TOK2'],
+                  ['TOR1'],
+                  ['WDC1']
+                ],
+
+          edcs: [
+                  ['CDG1'],
+                  ['CPH1'],
+                  ['DUB1'],
+                  ['DXB1'],
+                  ['MEL1'],
+                  ['MIL1'],
+                  ['MUM1'],
+                  ['OTP1'],
+                  ['PRG1']
+                ],
+                bdcs: [
+                  ['vCenter 1'],
+                  ['vCenter 2']
+                ],
+
+
+[
+
+        {
+
+          value: false,
+          name: this.name1,
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSC-C240-M3S',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 9298722'
+
+        },
+        {
+
+          value: false,
+          name: 'prod-esx-lrk1-02-01-32.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-02-01-24.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-02-01-28.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-02-01-10.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-02-01-08.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-02-01-21.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-02-01-07.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-02-01-14.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-02-01-23.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-02-01-12.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-02-01-05.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-02-01-30.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-02-01-19.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-02-01-17.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-02-01-25.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-02-01-02.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-02-01-13.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-02-01-26.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-02-01-31.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-02-01-01.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-02-01-20.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-02-01-22.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-02-01-29.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-02-01-16.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-02-01-03.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-02-01-04.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-02-01-06.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-02-01-18.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-02-01-15.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-02-01-09.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-02-01-27.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-02-01-11.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-01-18.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-01-14.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-01-19.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-01-12.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-01-13.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-01-23.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-01-22.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-01-09.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-01-15.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-01-27.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-01-01.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-01-30.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-01-24.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-01-25.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-01-26.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-01-07.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-01-31.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-01-02.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-01-21.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-01-29.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-01-11.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-01-32.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-01-16.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-01-10.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-01-17.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-01-28.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-01-04.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-01-06.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-01-20.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-01-08.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-01-05.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-01-03.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-03-32.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-03-01.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-03-04.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-03-25.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-03-16.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-03-19.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-03-15.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-03-27.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-03-21.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-03-20.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-03-30.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-03-17.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-03-03.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-03-31.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-03-22.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-03-18.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-03-23.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-03-09.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-03-11.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-03-05.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-03-02.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-03-07.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-03-13.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-03-10.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-03-24.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-03-12.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-03-08.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-03-29.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-03-06.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-03-28.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-03-14.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-03-26.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-c1-04.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 8294253'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-c1-02.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 8294253'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-c1-01.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 8294253'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-c1-03.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 8294253'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-02-14.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-02-04.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-02-32.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-02-24.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-02-06.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-02-12.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-02-09.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-02-21.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-02-26.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-02-03.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-02-18.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-02-15.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-02-31.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-02-19.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-02-07.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-02-01.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-02-27.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-02-25.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-02-28.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-02-23.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-02-11.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-02-13.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-02-02.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-02-10.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-02-17.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-02-30.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-02-22.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-02-20.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-02-08.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-02-16.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-02-05.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 8294253'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-01-02-29.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-02-02-26.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-02-02-02.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-02-02-31.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-02-02-24.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-02-02-06.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-02-02-28.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-02-02-23.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-02-02-13.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-02-02-01.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-02-02-11.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-02-02-16.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-02-02-05.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-02-02-20.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-02-02-21.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-02-02-12.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-02-02-14.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-02-02-15.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-02-02-07.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-02-02-10.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-02-02-03.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-02-02-04.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-02-02-27.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-02-02-32.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-02-02-19.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-02-02-22.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-02-02-17.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-02-02-09.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-02-02-25.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-02-02-18.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-02-02-08.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-02-02-29.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+        },
+        {
+          value: false,
+          name: 'prod-esx-lrk1-02-02-30.vm.ironport.com',
+          cpu: 'Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz',
+          model: 'UCSB-B200-M3',
+          lp: '16',
+          vms: '16',
+          hypervisor: '6.5.0 build 7273056'
+        }
+
+      ]
